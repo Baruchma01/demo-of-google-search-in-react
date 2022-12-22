@@ -1,5 +1,32 @@
 import { Input } from "./Input/Input";
+import { useState, useEffect } from "react";
 
 export const Search = () => {
-  return <Input />;
+  const [data, setData] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  // search items from the array
+  const handleSearch = (query) => {
+    if (query.length > 0) {
+      const filteredItems = data?.filter((item) =>
+        item.title.toLowerCase().includes(query)
+      );
+      setFilteredItems(filteredItems);
+    } else {
+      setFilteredItems([]);
+    }
+  };
+
+  // fetch data from the api and save the data in state
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch("https://dummyjson.com/products");
+      const data = await response.json();
+      const { products } = data;
+      setData(products);
+    }
+    fetchData();
+  }, []);
+
+  return <Input handleSearch={handleSearch} />;
 };
