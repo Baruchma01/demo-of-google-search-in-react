@@ -1,5 +1,12 @@
 import "./Input.css";
+import { useRef, useEffect } from "react";
 export const Input = ({ handleSearch }) => {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   return (
     <div className="searchbox">
       <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -7,6 +14,7 @@ export const Input = ({ handleSearch }) => {
       </svg>
 
       <input
+        ref={inputRef}
         aria-label="Search for a place on the map"
         placeholder="Enter place name or address"
         type="search"
