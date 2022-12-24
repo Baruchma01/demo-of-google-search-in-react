@@ -1,0 +1,8 @@
+.items {
+    width: 561px;
+    background-color: darkgray;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-family: sans-serif;
+}
