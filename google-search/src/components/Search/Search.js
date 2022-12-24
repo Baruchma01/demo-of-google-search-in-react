@@ -1,5 +1,6 @@
 import { Input } from "./Input/Input";
 import { useState, useEffect } from "react";
+import { Items } from "./items/Items";
 
 export const Search = () => {
   const [data, setData] = useState([]);
@@ -28,5 +29,10 @@ export const Search = () => {
     fetchData();
   }, []);
 
-  return <Input handleSearch={handleSearch} />;
+  return (
+    <div className="search-container" style={{ height: "500px" }}>
+      <Input handleSearch={handleSearch} />
+      <Items items={filteredItems} />
+    </div>
+  );
 };
