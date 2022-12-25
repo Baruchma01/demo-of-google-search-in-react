@@ -8,5 +8,14 @@
 }
 
 .items .active {
-    background-color: gray;
+    background-color: aliceblue;
+}
+
+.item {
+    height: 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }

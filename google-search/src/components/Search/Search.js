@@ -29,9 +29,9 @@ export const Search = () => {
 
   const handleSearch = (query) => {
     if (query.length > 0) {
-      const filteredItems = data?.filter((item) =>
-        item.title.toLowerCase().includes(query)
-      );
+      const filteredItems = data
+        ?.filter((item) => item.title.toLowerCase().includes(query))
+        .slice(0, 10);
       setFilteredItems(filteredItems);
     } else {
       setFilteredItems([]);

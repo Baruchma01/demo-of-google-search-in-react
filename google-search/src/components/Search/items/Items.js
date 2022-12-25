@@ -5,7 +5,7 @@ export const Items = ({ items, cursor, handleMouseEnter, handleClick }) => {
     <div className="items">
       {items.map((item, i) => (
         <div
-          className={cursor === i ? "active" : null}
+          className={cursor === i ? "active item" : "item"}
           key={item.id}
           onMouseEnter={() => handleMouseEnter(i)}
           onClick={() => handleClick(item)}

@@ -4,7 +4,6 @@ export const Item = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const query = searchParams.get("q");
-  console.log(query);
 
-  return <div>Item Page</div>;
+  return <div style={{ textAlign: "center" }}>Item ID IS {query}</div>;
 };
