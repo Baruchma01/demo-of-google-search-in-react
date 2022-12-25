@@ -1,6 +1,6 @@
 import "./Input.css";
 import { useRef, useEffect } from "react";
-export const Input = ({ handleSearch }) => {
+export const Input = ({ handleSearch, handleKeyDown }) => {
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -14,6 +14,7 @@ export const Input = ({ handleSearch }) => {
       </svg>
 
       <input
+        onKeyDown={handleKeyDown}
         ref={inputRef}
         aria-label="Search for a place on the map"
         placeholder="Enter place name or address"
