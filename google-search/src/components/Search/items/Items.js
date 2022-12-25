@@ -8,7 +8,7 @@ export const Items = ({ items, cursor, handleMouseEnter, handleClick }) => {
           className={cursor === i ? "active item" : "item"}
           key={item.id}
           onMouseEnter={() => handleMouseEnter(i)}
-          onClick={() => handleClick(item)}
+          onMouseDown={() => handleClick(item)} //use onMouseDown instead of onClick becuase of https://stackoverflow.com/questions/17769005/onclick-and-onblur-ordering-issue
         >
           {item.title}
         </div>

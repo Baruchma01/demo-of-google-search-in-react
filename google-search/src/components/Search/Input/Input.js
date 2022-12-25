@@ -1,6 +1,6 @@
 import "./Input.css";
 import { useRef, useEffect } from "react";
-export const Input = ({ handleSearch, handleKeyDown }) => {
+export const Input = ({ handleSearch, handleKeyDown, setIsItemsVisible }) => {
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -19,6 +19,8 @@ export const Input = ({ handleSearch, handleKeyDown }) => {
         aria-label="Search for a place on the map"
         placeholder="Enter place name or address"
         type="search"
+        onFocus={() => setIsItemsVisible(true)}
+        onBlur={() => setIsItemsVisible(false)}
         onChange={(e) => handleSearch(e.target.value)}
       />
     </div>
