@@ -54,13 +54,12 @@ export const Search = () => {
     }
   };
 
-  // TODO setIsItemsVisible(state)
   return (
     <div className="search-container">
       <Input
         handleSearch={handleSearch}
         handleKeyDown={handleKeyDown}
-        setIsItemsVisible={(state) => setIsItemsVisible(true)}
+        setIsItemsVisible={(state) => setIsItemsVisible(state)}
       />
       {isItemsVisible && (
         <Items
