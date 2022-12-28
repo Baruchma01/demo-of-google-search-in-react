@@ -23,4 +23,13 @@
 
 .item.in-history{
     color: #5218;
+    position: relative;
+}
+
+.delete-history {
+    cursor: pointer;
+    color: #777;
+    position: absolute;
+    left: 5px;
+    z-index: 100000;
 }

@@ -44,7 +44,9 @@ export const Search = () => {
   const handleSearch = (query) => {
     if (query.length > 0) {
       const filteredItems = results
-        ?.filter((item) => item.title.toLowerCase().includes(query))
+        ?.filter((item) =>
+          item.title.toLowerCase().includes(query.toLowerCase())
+        )
         .slice(0, 10);
       setFilteredItems(filteredItems);
     } else {
@@ -52,12 +54,13 @@ export const Search = () => {
     }
   };
 
+  // TODO setIsItemsVisible(state)
   return (
     <div className="search-container">
       <Input
         handleSearch={handleSearch}
         handleKeyDown={handleKeyDown}
-        setIsItemsVisible={(state) => setIsItemsVisible(state)}
+        setIsItemsVisible={(state) => setIsItemsVisible(true)}
       />
       {isItemsVisible && (
         <Items

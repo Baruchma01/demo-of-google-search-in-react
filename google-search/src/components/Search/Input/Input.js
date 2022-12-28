@@ -16,8 +16,7 @@ export const Input = ({ handleSearch, handleKeyDown, setIsItemsVisible }) => {
       <input
         onKeyDown={handleKeyDown}
         ref={inputRef}
-        aria-label="Search for a place on the map"
-        placeholder="Enter place name or address"
+        placeholder="Enter Product Name"
         type="search"
         onFocus={() => setIsItemsVisible(true)}
         onBlur={() => setIsItemsVisible(false)}
