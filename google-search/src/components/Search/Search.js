@@ -1,9 +1,21 @@
 import { Input } from "./Input/Input";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Items } from "./items/Items";
 import { useNavigate } from "react-router-dom";
 
-export const Search = ({ results }) => {
+export const Search = () => {
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch("https://dummyjson.com/products");
+      const data = await response.json();
+      const { products } = data;
+      setResults(products);
+    }
+    fetchData();
+  }, []);
+
   const navigate = useNavigate();
   const [filteredItems, setFilteredItems] = useState([]);
   const [isItemsVisible, setIsItemsVisible] = useState(true);
@@ -23,6 +35,8 @@ export const Search = ({ results }) => {
   };
 
   const handleClick = (item) => {
+    // in real life it will be saved inside DB this is just for the example
+    localStorage.setItem(item.id, JSON.stringify(item.title));
     const query = `q=${item.id}`;
     navigate(`/search?${query}`);
   };

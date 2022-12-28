@@ -7,7 +7,7 @@
     font-family: sans-serif;
 }
 
-.items .active {
+.item.active {
     background-color: aliceblue;
 }
 
@@ -18,4 +18,9 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.item.in-history{
+    color: #5218;
 }

@@ -1,23 +1,24 @@
 import "./App.css";
-import { useState, useEffect } from "react";
 import { Search } from "./components/Search/Search";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Item } from "./components/Search/Item";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Search />,
+  },
+  {
+    path: "/search",
+    element: <Item />,
+  },
+]);
 
 function App() {
-  const [results, setResults] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("https://dummyjson.com/products");
-      const data = await response.json();
-      const { products } = data;
-      setResults(products);
-    }
-    fetchData();
-  }, []);
-
   return (
     <div className="App">
-      <Search results={results} />
+      {/* <Search results={results} /> */}
+      <RouterProvider router={router} />
     </div>
   );
 }
