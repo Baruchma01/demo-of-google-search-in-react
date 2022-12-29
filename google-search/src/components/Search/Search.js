@@ -2,6 +2,7 @@ import { Input } from "./Input/Input";
 import { useState, useEffect } from "react";
 import { Items } from "./items/Items";
 import { useNavigate } from "react-router-dom";
+import { Img } from "./Image";
 
 export const Search = () => {
   const [results, setResults] = useState([]);
@@ -56,6 +57,7 @@ export const Search = () => {
 
   return (
     <div className="search-container">
+      <Img />
       <Input
         handleSearch={handleSearch}
         handleKeyDown={handleKeyDown}
