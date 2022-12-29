@@ -20,7 +20,7 @@ export const Item = () => {
   return (
     <div className="item-container">
       <Search />
-      <div className="title">Title {product?.title}</div>
+      <a href={product?.thumbnail}>Click here to visit {product?.title}</a>
       <div className="Description"> Description ${product?.description}</div>
     </div>
   );
