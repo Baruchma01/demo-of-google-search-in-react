@@ -7,6 +7,29 @@
     font-family: sans-serif;
 }
 
-.items .active {
-    background-color: gray;
+.item.active {
+    background-color: aliceblue;
+}
+
+.item {
+    height: 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.item.in-history{
+    color: #5218;
+    position: relative;
+}
+
+.delete-history {
+    cursor: pointer;
+    color: #777;
+    position: absolute;
+    left: 5px;
+    z-index: 100000;
 }
